@@ -30,6 +30,6 @@ public class Node
 
     public void emit(String s)
     {
-
+        System.out.println("\t" + s);
     }
 }
