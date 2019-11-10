@@ -15,7 +15,7 @@ public class Node
 
     void error(String str)
     {
-        throw new Error("near line " + lexline + ": " + str)
+        throw new Error("near line " + lexline + ": " + str);
     }
 
     public int newlabel()
