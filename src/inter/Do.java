@@ -2,32 +2,31 @@ package inter;
 
 import symbols.*;
 
-public class While extends Stmt
+public class Do extends Stmt
 {
     Expr expr;
     Stmt stmt;
 
-    public While()
+    public Do()
     {
         expr = null;
         stmt = null;
     }
 
-    public void init(Expr x, Stmt s)
+    public void init(Stmt s, Expr x)
     {
         expr = x;
         stmt = s;
         if (expr.type != Type.Bool)
-            expr.error("boolean required in while");
+            expr.error("boolean required in do");
     }
 
     public void gen(int b, int a)
     {
         after = a;  // Сохранение метки a
-        expr.jumping(0, a);
-        int label = newlabel();  // Метка для stmt
+        int label = newlabel();
+        stmt.gen(b, label);
         emitlabel(label);
-        stmt.gen(label, b);
-        emit("goto L" + b);
+        expr.jumping(b, 0);
     }
 }
