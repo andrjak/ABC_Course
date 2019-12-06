@@ -42,7 +42,8 @@ public class Lexer
     boolean readch(char c) throws IOException
     {
         readch();
-        if (peek != c) return false;
+        if (peek != c)
+            return false;
         peek = ' ';
         return true;
     }

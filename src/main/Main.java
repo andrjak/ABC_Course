@@ -10,7 +10,7 @@ public class Main
     {
         Lexer lex = new Lexer();
         Parser parser = new Parser(lex);
-        parse.program();
+        parser.program();
         System.out.write('\n');
     }
 }
