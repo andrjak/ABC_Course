@@ -1,0 +1,5 @@
+(cd lexer; rm *.class)
+(cd symbols; rm *.class)
+(cd inter; rm *.class)
+(cd parser; rm *.class)
+(cd main; rm *.class) 
